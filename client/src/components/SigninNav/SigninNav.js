@@ -8,8 +8,6 @@ import './SigninNav.css';
 import SigninButton from '../SigninButton/SigninButton';
 import SignupButton from '../SignupButton/SignupButton';
 import LearnMoreButton from '../LearnMoreButton/LearnMoreButton';
-import CopyrightFooter from '../CopyrightFooter/CopyrightFooter';
-
 
 const SignupNav = () => (
   <div class="container">
@@ -31,10 +29,10 @@ const SignupNav = () => (
       </Col>
     </Row>
     <Row>
-      <Col s={4} m={2} l={2}>
+      <Col s={5} m={2} l={2}>
         <SignupButton/>
       </Col>
-      <Col s={5} m={3} l={3}>
+      <Col s={6} m={3} l={3}>
         <LearnMoreButton/>
       </Col>
     </Row>
