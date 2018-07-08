@@ -18,6 +18,11 @@
     "nodemon": "^1.11.0"
   },
   "dependencies": {
-    "express": "^4.15.4"
+    "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
+    "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
+    "@fortawesome/react-fontawesome": "^0.1.0-11",
+    "@types/react-router": "^4.0.28",
+    "express": "^4.15.4",
+    "react-materialize": "^2.3.3"
   }
 }
