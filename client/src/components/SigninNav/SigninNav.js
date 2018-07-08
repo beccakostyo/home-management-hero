@@ -29,10 +29,10 @@ const SignupNav = () => (
       </Col>
     </Row>
     <Row>
-      <Col s={5} m={5} l={2}>
+      <Col>
         <SignupButton/>
       </Col>
-      <Col s={7} m={7} l={3}>
+      <Col>
         <LearnMoreButton/>
       </Col>
     </Row>
