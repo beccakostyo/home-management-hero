@@ -1,7 +1,11 @@
 import React from 'react';
+import SignupNav from '../../components/SignupNav/SignupNav'
 
 const ContactPage = () => (
-  <h1>Concact!</h1>
+  <div>
+    <SignupNav />
+    <h1>Contact!</h1>
+  </div>
 )
 
 export default ContactPage;

@@ -1,7 +1,11 @@
 import React from 'react';
+import SignupNav from '../../components/SignupNav/SignupNav'
 
 const AboutPage = () => (
-  <h1>About!</h1>
+  <div>
+    <SignupNav />
+    <h1>About!</h1>
+  </div>
 )
 
 export default AboutPage;
