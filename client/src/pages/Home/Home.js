@@ -10,7 +10,7 @@ import "./Home.css";
 const Home = () => (
   <div className="App">
     <SigninNav />
-    <div class="container">
+    <div className="container">
       <Row>
         <Col s={12} m={8} l={9} className="grid-example">
           <h1 className="app-title">Home Management Hero</h1>

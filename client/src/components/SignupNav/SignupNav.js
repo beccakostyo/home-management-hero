@@ -9,7 +9,7 @@ import SigninButton from '../SigninButton/SigninButton';
 import SignupButton from '../SignupButton/SignupButton';
 
 const SigninNav = () => (
-  <div class="container">
+  <div className="container">
     <Navbar className="transparent-nav">
       <NavItem className="left-float"><FontAwesomeIcon icon={faHome} size='3x' /></NavItem>
       <NavItem className="right-float signin-btn"><SignupButton /></NavItem>

@@ -22,7 +22,10 @@
     "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
     "@fortawesome/react-fontawesome": "^0.1.0-11",
     "@types/react-router": "^4.0.28",
+    "body-parser": "^1.18.3",
     "express": "^4.15.4",
-    "react-materialize": "^2.3.3"
+    "mongoose": "^5.2.2",
+    "react-materialize": "^2.3.3",
+    "react-router-dom": "^4.3.1"
   }
 }

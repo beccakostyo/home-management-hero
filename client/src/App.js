@@ -1,16 +1,37 @@
 import React, { Component } from "react";
-import "./App.css";
-import SigninNav from "./components/SigninNav/SigninNav";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+
+// Individual component imports //
 import CopyRightFooter from './components/CopyrightFooter/CopyrightFooter';
-import Home from "./pages/Home/Home";
+
+// Page imports //
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import HelpPage from "./pages/HelpPage";
+import Home from "./pages/Home";
+import SigninPage from "./pages/SigninPage";
+import SignupPage from "./pages/SignupPage";
+import UserDash from "./pages/UserDash";
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Home />
-        <CopyRightFooter/>
-      </div>
+      <Router>
+        <div className="App">
+          <Switch>
+            <Redirect from exact path="/" to="/home" />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/about" component={AboutPage} />
+            <Route exact path="/contact" component={ContactPage} />
+            <Route exact path="/help" component={HelpPage} />
+            <Route exact path="/signin" component={SigninPage} />
+            <Route exact path="/signup" component={SignupPage} />
+            <Route exact path="/dash" component={UserDash} />
+          </Switch>
+          <CopyRightFooter />
+        </div>
+      </Router>
     );
   }
 }
