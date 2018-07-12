@@ -20,7 +20,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Switch>
-            <Redirect from exact path="/" to="/home" />
+            <Redirect from="/" exact path to="/home" />
             <Route exact path="/home" component={Home} />
             <Route exact path="/about" component={AboutPage} />
             <Route exact path="/contact" component={ContactPage} />

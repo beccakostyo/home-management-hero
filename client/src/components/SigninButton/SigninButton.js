@@ -3,9 +3,7 @@ import { Button } from 'react-materialize';
 import './SigninButton.css';
 
 const SigninButton = () => (
-  <a href="/signin">
-    <Button>Sign In</Button>
-  </a>
+  <Button>Sign In</Button>
 )
 
 export default SigninButton;

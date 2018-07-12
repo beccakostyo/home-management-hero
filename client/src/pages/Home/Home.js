@@ -23,10 +23,10 @@ const Home = () => (
       </Row>
       <Row>
         <Col>
-          <SignupButton />
+          <a href="/signup"><SignupButton /></a>
         </Col>
         <Col>
-          <LearnMoreButton />
+          <a href="/about"><LearnMoreButton /></a>
         </Col>
       </Row>
     </div>
