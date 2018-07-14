@@ -34,9 +34,7 @@ class SignupPage extends Component {
         console.log(response)
         if (response.data) {
           console.log(`Successful signup!`)
-          this.setState({
-            redirectTo: '/dash'
-          })
+          this.props.history.push("/dash")
         } else {
           console.log('Sign-up error')
         }
