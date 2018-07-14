@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, NavItem, Row, Col } from 'react-materialize';
+import { Navbar, NavItem } from 'react-materialize';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
 

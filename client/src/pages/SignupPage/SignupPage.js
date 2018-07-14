@@ -5,6 +5,8 @@ import { Card, Row, Input, Button } from 'react-materialize';
 
 class SignupPage extends Component {
   state = {
+    firstName: "",
+    lastName: "",
     username: "",
     password: "",
   };
@@ -23,6 +25,8 @@ class SignupPage extends Component {
     event.preventDefault();
     
     axios.post('/api/user', {
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
       username: this.state.username,
       password: this.state.password
     })
@@ -49,6 +53,22 @@ class SignupPage extends Component {
         <Card>
           <h1 style={{color:'black'}}>Sign up!</h1>
           <Row>
+            <Input 
+              s={6}
+              type="text"
+              name="firstName"
+              label="First Name"
+              value={this.state.firstName}
+              onChange={this.handleInputChange}
+            />
+            <Input 
+              s={6}
+              type="text"
+              name="lastName"
+              label="Last Name"
+              value={this.state.lastName}
+              onChange={this.handleInputChange}
+            />
             <Input 
               s={6}
               type="text"

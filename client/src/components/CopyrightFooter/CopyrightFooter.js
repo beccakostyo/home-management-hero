@@ -4,7 +4,7 @@ import './CopyrightFooter.css';
 const CopyrightFooter = () => (
   <div className="footer">
       <p className="float-left">&copy; 2018 Becca Kostyo</p>
-      <a className="float-right" target="_blank" href="https://github.com/beccakostyo/home-management-hero"><i className="fab fa-github fa-2x"></i></a>
+      <a className="float-right" target="_blank" rel="noopener noreferrer" href="https://github.com/beccakostyo/home-management-hero"><i className="fab fa-github fa-2x"></i></a>
   </div>
 )
 
