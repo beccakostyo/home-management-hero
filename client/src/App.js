@@ -26,9 +26,10 @@ class App extends Component {
             <Route exact path="/about" component={AboutPage} />
             <Route exact path="/contact" component={ContactPage} />
             <Route exact path="/help" component={HelpPage} />
-            <Route exact path="/signin" component={SigninPage} />
+            <Route exact path="/signin" component={SigninPage}/>
             <Route exact path="/signup" component={SignupPage} />
             <Route exact path="/dash" component={UserDash} />
+            <Route exact path="/signout" component={Home} />
           </Switch>
           <CopyRightFooter />
         </div>

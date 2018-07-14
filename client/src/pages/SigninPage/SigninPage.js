@@ -22,23 +22,15 @@ class SigninPage extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     
-    axios.post('/api/user', {
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
+    axios.post('/api/signin', {
       username: this.state.username,
       password: this.state.password
     })
       .then(response => {
-        console.log(response)
-        if (response.data) {
-          console.log(`Successful signup!`)
-          this.props.history.push("/dash")
-        } else {
-          console.log('Sign-up error')
-        }
+        console.log(response.status)
       })
         .catch(error => {
-          console.log(`Sign up server error: ${error}`)
+          console.log(`Login error: ${error}`)
         })
   };
   render() {
