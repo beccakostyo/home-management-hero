@@ -12,10 +12,10 @@ import Home from "./pages/Home";
 import SigninPage from "./pages/SigninPage";
 import SignupPage from "./pages/SignupPage";
 import UserDash from "./pages/UserDash";
-
+import AddPropertyForm from "./pages/AddPropertyPage";
 
 class App extends Component {
-  
+
   render() {
     return (
       <Router>
@@ -29,6 +29,7 @@ class App extends Component {
             <Route exact path="/signin" component={SigninPage}/>
             <Route exact path="/signup" component={SignupPage} />
             <Route exact path="/dash" component={UserDash} />
+            <Route exact path="/add-property" component={AddPropertyForm} />
             <Route exact path="/signout" component={Home} />
           </Switch>
           <CopyRightFooter />

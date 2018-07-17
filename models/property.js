@@ -3,14 +3,17 @@ const Schema = mongoose.Schema;
 
 // Define property Schema
 const propertySchema = new Schema({
-
-	name: { 
+	homeName: { 
     type: String, 
     required: true 
   },
   address: { 
     type: String, 
     required: true 
+  },
+  phone: {
+    type: String,
+    required: false
   }
 });
 
