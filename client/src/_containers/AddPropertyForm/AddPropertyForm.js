@@ -12,31 +12,31 @@ class AddPropertyForm extends Component {
     homeName: "",
     address: "",
     phone: "",
-    //uploadFileCloudinaryUrl: "",
+    uploadFileCloudinaryUrl: "",
   };
 
-  // onImageDrop(files) {
-    // this.setState({
-      // uploadedFiles: files[0]
-    // })
-    // this.handleImageUpload(files[0])
-  // }
-// 
-  // handleImageUpload(file) {
-    // let upload = request.post(CLOUDINARY_UPLOAD_URL)
-      // .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
-      // .field('file', file);
-    // upload.end((err, response) => {
-      // if (err) {
-        // console.error(err)
-      // }
-      // if (response.body.secure_url !== '') {
-        // this.setState({
-          // uploadFileCloudinaryUrl: response.body.secure_url
-        // });
-      // }
-    // });
-  // }
+  onImageDrop(files) {
+    this.setState({
+      uploadedFiles: files[0]
+    })
+    this.handleImageUpload(files[0])
+  }
+
+  handleImageUpload(file) {
+    let upload = request.post(CLOUDINARY_UPLOAD_URL)
+      .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+      .field('file', file);
+    upload.end((err, response) => {
+      if (err) {
+        console.error(err)
+      }
+      if (response.body.secure_url !== '') {
+        this.setState({
+          uploadFileCloudinaryUrl: response.body.secure_url
+        });
+      }
+    });
+  }
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
@@ -64,7 +64,7 @@ class AddPropertyForm extends Component {
         homeName: this.state.homeName,
         address: this.state.address,
         phone: this.state.phone,
-        //image: this.state.uploadFileCloudinaryUrl
+        image: this.state.uploadFileCloudinaryUrl
       })
         .then(res => this.loadProperties())
         .catch(err => console.log(err))
@@ -74,7 +74,21 @@ class AddPropertyForm extends Component {
   render() {
     return (
       <div className="container">
+        <Row>
+          <Dropzone
+            multiple={false}
+            accept="image/*"
+            onDrop={this.onImageDrop.bind(this)}>
+            <p>Drop an image or click to select a file to upload.</p>
+          </Dropzone>
 
+          <div>
+            {this.state.uploadFileCloudinaryUrl === '' ? null :
+              <div>
+                <img value={this.state.image} src={this.state.uploadFileCloudinaryUrl} alt="Home" />
+              </div>}
+          </div>
+        </Row>
         <Row>
           <Input
             s={12}
