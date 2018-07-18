@@ -85,7 +85,7 @@ class AddPropertyForm extends Component {
           <div>
             {this.state.uploadFileCloudinaryUrl === '' ? null :
               <div>
-                <img value={this.state.image} src={this.state.uploadFileCloudinaryUrl} />
+                <img value={this.state.image} src={this.state.uploadFileCloudinaryUrl} alt="Home" />
               </div>}
           </div>
         </Row>
