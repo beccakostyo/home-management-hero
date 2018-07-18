@@ -3,8 +3,8 @@ import SignupNav from '../Navs/SignupNav';
 
 const HelpPage = () => (
   <div>
-  <SignupNav />
-  <h1>Help!</h1>
+    <SignupNav />
+    <h1>Help!</h1>
   </div>
 )
 

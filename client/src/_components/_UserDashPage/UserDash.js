@@ -8,6 +8,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import LogOutNav from '../Navs/LogOutNav'
 import "./UserDash.css";
+import { userInfo } from 'os';
 
 class UserDash extends Component {
   state = {
@@ -58,6 +59,7 @@ class UserDash extends Component {
                   key={property._id}
                   icon='place'>
                   <ul className="property-info">
+                    <li><img src={property.image} /></li>
                     <li><strong>Name:</strong> {property.homeName}</li>
                     <li><strong>Address:</strong> {property.address}</li>
                     <li><strong>Main Phone:</strong> {property.phone}</li>

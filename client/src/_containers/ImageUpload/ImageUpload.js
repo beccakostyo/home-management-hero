@@ -53,7 +53,6 @@ class ImageUpload extends React.Component {
         <div>
           {this.state.uploadFileCloudinaryUrl === '' ? null :
             <div>
-              <p>{this.state.uploadedFile.name}</p>
               <img value={this.state.image} src={this.state.uploadFileCloudinaryUrl} />
             </div>}
         </div>
