@@ -4,8 +4,8 @@ import API from '../../utils/API';
 import Dropzone from 'react-dropzone';
 import request from 'superagent'
 
-const CLOUDINARY_UPLOAD_PRESET = 'is8ybozh';
-const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/dexu8dqab/image/upload';
+const CLOUDINARY_UPLOAD_PRESET = process.env.f4uhpf1q || 'is8ybozh';
+const CLOUDINARY_UPLOAD_URL = process.env.CLOUDINARY_URL || 'https://api.cloudinary.com/v1_1/dexu8dqab/image/upload';
 
 class AddPropertyForm extends Component {
   state = {
