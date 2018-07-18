@@ -14,7 +14,7 @@ const propertySchema = new Schema({
   phone: {
     type: String,
     required: false
-  }
+  },
 });
 
 

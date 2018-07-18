@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Input, Button } from 'react-materialize';
-import API from '../../utils/API'
+import API from '../../utils/API';
 
 class AddPropertyForm extends Component {
   state = {
@@ -22,10 +22,10 @@ class AddPropertyForm extends Component {
   loadProperties = () => {
     API.getProperties()
     .then(res => 
-    this.setState({ properties: res.data, homeName: "", address: "", phone: ""})
+    this.setState({ properties: res.data, homeName: "", address: "", phone: "", image: ""})
   )
   .catch(err => console.log(err))
-  }
+  };
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -34,7 +34,8 @@ class AddPropertyForm extends Component {
       API.saveProperty({
         homeName: this.state.homeName,
         address: this.state.address,
-        phone: this.state.phone
+        phone: this.state.phone,
+        image: this.state.uploadFileCloudinaryUrl
       })
         .then(res => this.loadProperties())
         .catch(err => console.log(err))
@@ -76,12 +77,11 @@ class AddPropertyForm extends Component {
             onClick={this.handleFormSubmit}>
             submit
               </Button>
-          <br /><br />
+          <br/><br/>
         </Row>
       </div>
     )
   }
-
 }
 
 export default AddPropertyForm;
