@@ -18,14 +18,20 @@ router.get('/currentUser', (req, res) => {
   }
 })
 
-router.post('/signin', (req, res) => {
-  passport.authenticate('local', (error, user, info) => {
-    console.log('Hi mom');
-    if (error) return console.log(error);
-    // if (info) console.log('INFO: ', info);
-    // if (user) console.log('USER: ', user);
-    res.json('Hi mom');
-  })(req, res);
-});
+router.post('/signin',
+  function (req, res, next) {
+    console.log('routes/user.js, login, req.body:')
+    console.log(req.body)
+    next()
+  },
+  passport.authenticate('local'),
+  (req, res) => {
+    console.log('logged in', req.user);
+    var userInfo = {
+      username: req.user.username
+    };
+    res.send(userInfo)
+  }
+);
 
 module.exports = router;

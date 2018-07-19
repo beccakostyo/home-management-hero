@@ -9,6 +9,10 @@ class SigninPage extends Component {
     password: "",
   };
 
+  updateUser (userObject) {
+    this.setState(userObject)
+  }
+
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
     let value = event.target.value;
@@ -27,7 +31,14 @@ class SigninPage extends Component {
       password: this.state.password
     })
       .then(response => {
-        console.log(response.status)
+        console.log(response)
+        if (response.status === 200) {
+          this.updateUser({
+            loggedIn: true,
+            username: response.data.username
+          })
+          this.props.history.push("/dash")
+        }
       })
         .catch(error => {
           console.log(`Login error: ${error}`)
