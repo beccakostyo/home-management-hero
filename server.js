@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const routes = require('./routes');
-const passport = require('./passport');
+const passport = require('passport');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -22,6 +22,8 @@ app.use(
   })
 );
 
+
+require('./passport');
 // Passport
 app.use(passport.initialize())
 app.use(passport.session()) //calls serializeUser and deserializeUser

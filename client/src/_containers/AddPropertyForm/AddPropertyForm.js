@@ -49,7 +49,7 @@ class AddPropertyForm extends Component {
   };
 
   loadProperties = () => {
-    API.getProperties()
+    API.get()
       .then(res =>
         this.setState({ properties: res.data, homeName: "", address: "", phone: "", image: "" })
       )
@@ -60,7 +60,7 @@ class AddPropertyForm extends Component {
     event.preventDefault();
 
     if (this.state.homeName && this.state.address) {
-      API.saveProperty({
+      API.save('/properties', {
         homeName: this.state.homeName,
         address: this.state.address,
         phone: this.state.phone,

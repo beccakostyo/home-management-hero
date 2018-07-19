@@ -6,7 +6,7 @@ mongoose.Promise = Promise;
 module.exports = {
   findAll: function (req, res) {
     db.Property
-      .find(req.query)
+      .find({owner: req.user._id})
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -19,7 +19,7 @@ module.exports = {
   },
   create: function(req, res) {
     db.Property
-      .create(req.body)
+      .create({...req.body, owner: req.user._id})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

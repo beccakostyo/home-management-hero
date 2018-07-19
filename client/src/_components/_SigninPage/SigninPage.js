@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import SigninNav from "../Navs/SigninNav"
+import SignupNav from "../Navs/SignupNav"
 import { Card, Row, Input, Button } from 'react-materialize';
 
 class SigninPage extends Component {
@@ -36,7 +36,7 @@ class SigninPage extends Component {
   render() {
     return (
       <div className="root">
-      <SigninNav />
+      <SignupNav />
       <div className="container">
         <Card>
           <h1 style={{color:'black'}}>Sign In!</h1>

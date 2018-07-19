@@ -22,15 +22,16 @@ class UserDash extends Component {
   }
 
   loadProperties = () => {
-    API.getProperties()
+    API.get('/properties')
       .then(res => {
+        console.log(res);
         this.setState({ properties: res.data, homeName: "", address: "", phone: "" })
       })
       .catch(err => console.log(err));
   }
   
   deleteProperty = id => {
-    API.deleteProperty(id)
+    API.delete('/properties', id)
       .then(res => this.loadProperties())
       .catch(err => console.log(err));
   };

@@ -1,20 +1,22 @@
 import axios from "axios";
+const prefix = '/api';
 
 export default {
   // Gets all books
-  getProperties: function() {
-    return axios.get("/api/properties");
+  get: function(endpoint) {
+    console.log(`${prefix}${endpoint}`);
+    return axios.get(`${prefix}${endpoint}`);
   },
   // Gets the book with the given id
-  getProperty: function(id) {
-    return axios.get("/api/properties/" + id);
+  getById: function(endpoint, id) {
+    return axios.get(`${prefix}${endpoint}/${id}`);
   },
   // Deletes the book with the given id
-  deleteProperty: function(id) {
-    return axios.delete("/api/properties/" + id);
+  delete: function(endpoint, id) {
+    return axios.delete(`${prefix}${endpoint}/${id}`);
   },
   // Saves a book to the database
-  saveProperty: function(propertyData) {
-    return axios.post("/api/properties/", propertyData);
+  save: function(endpoint, propertyData) {
+    return axios.post(`${prefix}${endpoint}`, propertyData);
   }
 };

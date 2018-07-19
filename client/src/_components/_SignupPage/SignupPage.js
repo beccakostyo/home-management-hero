@@ -24,7 +24,7 @@ class SignupPage extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     
-    axios.post('/api/user', {
+    axios.post('/api/users', {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       username: this.state.username,
@@ -79,7 +79,7 @@ class SignupPage extends Component {
               s={6}
               type="password"
               name="password"
-              label="password"
+              label="Password"
               value={this.state.Password} 
               onChange={this.handleInputChange}
             />

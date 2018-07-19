@@ -3,6 +3,9 @@ const Schema = mongoose.Schema;
 
 // Define property Schema
 const propertySchema = new Schema({
+  owner: {
+    type: Schema.Types.ObjectId, ref: 'User',
+  },
 	homeName: { 
     type: String, 
     required: true 
