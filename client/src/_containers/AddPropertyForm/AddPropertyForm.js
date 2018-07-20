@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Input, Button } from 'react-materialize';
+import { withRouter } from 'react-router-dom';
 import API from '../../utils/API';
 import Dropzone from 'react-dropzone';
 import request from 'superagent'
@@ -55,6 +56,7 @@ class AddPropertyForm extends Component {
     API.get()
       .then(res =>
         this.setState({ properties: res.data, homeName: "", streetAddress: "", city:"", state:"", zipCode: "", phone: "", image: "" }),
+        this.props.history.push("/dash"),
       )
       .catch(err => console.log(err))
   };
@@ -65,6 +67,7 @@ class AddPropertyForm extends Component {
       return true
     }
   }
+
   handleFormSubmit = event => {
     event.preventDefault();
 
@@ -79,9 +82,8 @@ class AddPropertyForm extends Component {
         image: this.state.uploadFileCloudinaryUrl
       })
         .then(res => 
-          this.props.history.push("/dash"),
-          this.loadProperties()
-          )
+          this.loadProperties(),
+        )
         .catch(err => console.log(err))
     }
   };
@@ -167,4 +169,4 @@ class AddPropertyForm extends Component {
   }
 }
 
-export default AddPropertyForm;
+export default withRouter(AddPropertyForm);
