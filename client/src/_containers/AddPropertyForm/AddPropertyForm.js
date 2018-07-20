@@ -10,7 +10,10 @@ const CLOUDINARY_UPLOAD_URL = process.env.CLOUDINARY_URL || 'https://api.cloudin
 class AddPropertyForm extends Component {
   state = {
     homeName: "",
-    address: "",
+    streetAddress: "",
+    city: "",
+    state: "",
+    zipCode: "",
     phone: "",
     uploadFileCloudinaryUrl: "",
   };
@@ -51,22 +54,34 @@ class AddPropertyForm extends Component {
   loadProperties = () => {
     API.get()
       .then(res =>
-        this.setState({ properties: res.data, homeName: "", address: "", phone: "", image: "" })
+        this.setState({ properties: res.data, homeName: "", streetAddress: "", city:"", state:"", zipCode: "", phone: "", image: "" }),
       )
       .catch(err => console.log(err))
   };
 
+  // Simple function to make sure all required fields have been populated //
+  checkValidation() {
+    if (this.state.homeName && this.state.streetAddress && this.state.city && this.state.state && this.state.zipCode) {
+      return true
+    }
+  }
   handleFormSubmit = event => {
     event.preventDefault();
 
-    if (this.state.homeName && this.state.address) {
+    if (this.checkValidation) {
       API.save('/properties', {
         homeName: this.state.homeName,
-        address: this.state.address,
+        streetAddress: this.state.streetAddress,
+        city: this.state.city,
+        state: this.state.state,
+        zipCode: this.state.zipCode,
         phone: this.state.phone,
         image: this.state.uploadFileCloudinaryUrl
       })
-        .then(res => this.loadProperties())
+        .then(res => 
+          this.props.history.push("/dash"),
+          this.loadProperties()
+          )
         .catch(err => console.log(err))
     }
   };
@@ -75,19 +90,19 @@ class AddPropertyForm extends Component {
     return (
       <div className="container">
         <Row>
-          <Dropzone
-            multiple={false}
-            accept="image/*"
-            onDrop={this.onImageDrop.bind(this)}>
-            <p>Drop an image or click to select a file to upload.</p>
-          </Dropzone>
-
-          <div>
+        <div>
             {this.state.uploadFileCloudinaryUrl === '' ? null :
               <div>
                 <img value={this.state.image} src={this.state.uploadFileCloudinaryUrl} alt="Home" />
               </div>}
           </div>
+          <Dropzone
+            multiple={false}
+            accept="image/*"
+            onDrop={this.onImageDrop.bind(this)}>
+            <p className="dropzone-guidance">Click here to select a picture to upload.</p>
+          </Dropzone>
+
         </Row>
         <Row>
           <Input
@@ -101,9 +116,33 @@ class AddPropertyForm extends Component {
           <Input
             s={12}
             type="text"
-            name="address"
-            label="Address"
-            value={this.state.address}
+            name="streetAddress"
+            label="Street Address"
+            value={this.state.streetAddress}
+            onChange={this.handleInputChange}
+          />
+          <Input
+            s={4}
+            type="text"
+            name="city"
+            label="City"
+            value={this.state.city}
+            onChange={this.handleInputChange}
+          />
+          <Input
+            s={4}
+            type="text"
+            name="state"
+            label="State"
+            value={this.state.state}
+            onChange={this.handleInputChange}
+          />
+          <Input
+            s={4}
+            type="text"
+            name="zipCode"
+            label="Zip Code"
+            value={this.state.zipCode}
             onChange={this.handleInputChange}
           />
           <Input
