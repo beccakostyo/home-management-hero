@@ -1,0 +1,22 @@
+.add-property-form-container {
+  margin-top: 30px;
+}
+.dropzone-div {
+  position: relative; 
+  width: 200px; 
+  height: 210px; 
+  border-width: 2px; 
+  border-color: #26a69a; 
+  color: #26a69a;
+  border-style: dashed; 
+  border-radius: 5px;
+  margin-right: 0px !important;
+}
+.dropzone-guidance {
+  font-size: 1.3rem;
+  margin: 12px !important;
+  text-align: center !important;
+}
+.pic-preview {
+  float: left;
+}

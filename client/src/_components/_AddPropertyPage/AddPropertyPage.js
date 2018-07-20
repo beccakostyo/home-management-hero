@@ -7,7 +7,14 @@ const AddPropertyPage = () => (
   <div className="container">
     <SignupNav />
     <Card>
-      <h1>Add a new property</h1>
+      <div className="center-align">
+        <h1>Add a new property</h1>
+        <p className="flow-text">
+          Start with the basics...enter in a name for your property, the address, and the phone number. You may also upload a picture if you choose!
+        </p>
+        <br/><br/>
+        <p><em>* Denotes required field</em></p>
+        </div>
       <AddPropertyForm />
     </Card>
   </div>
