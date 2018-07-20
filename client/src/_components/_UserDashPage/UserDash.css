@@ -4,19 +4,19 @@
   text-align: none;
 }
 .material-icons {
-  margin-left: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 .add-icon {
   margin-top: 12px;
 }
-.view-button {
+.expand-icon {
   float: right;
-  margin-top: 3px;
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-top: 15px;
 }
 .delete-button {
-  background-color: #410e0e
+  background-color: #410e0e;
+  float: right;
 }
 .property-info {
   margin-bottom: 20px;
