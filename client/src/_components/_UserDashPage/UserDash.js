@@ -31,18 +31,6 @@ class UserDash extends Component {
       .catch(err => console.log(err));
   };
   
-  // loadById + getById = individual property //
-  loadPropertyById = () => {
-    API.getById(`/properties/${this._id}`)
-      .then(res => {
-        console.log(res)
-      })
-  };
-  getPropertyById = id => {
-    API.getById(`/properties/${id}`)
-      .then(res => this.loadPropertyById())
-  };
-  
   deleteProperty = id => {
     API.delete('/properties', id)
       .then(res => this.loadProperties())
@@ -74,11 +62,12 @@ class UserDash extends Component {
                   </ul>
 
                   <Row>
-                    <Link to={`/properties/${property._id}`}>
+                    <Link to={ `/properties/${property._id}` } >
                       <Button className='view-button'>View & Edit</Button>
                     </Link>
                     <Button className='delete-button' onClick={() => this.deleteProperty(property._id)} >Delete</Button>
                   </Row>
+
                 </CollapsibleItem>
               ))}
             </Collapsible>

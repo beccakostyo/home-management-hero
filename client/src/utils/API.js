@@ -8,8 +8,8 @@ export default {
     return axios.get(`${prefix}${endpoint}`);
   },
   // Gets the property with the given id
-  getById: function(endpoint, id) {
-    return axios.get(`${prefix}${endpoint}/${id}`);
+  getById: function( id) {
+    return axios.get(`/api/properties/${id}`);
   },
   // Deletes the property with the given id
   delete: function(endpoint, id) {

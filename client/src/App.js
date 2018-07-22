@@ -13,6 +13,7 @@ import SigninPage from "./_components/_SigninPage";
 import SignupPage from "./_components/_SignupPage";
 import UserDashPage from "./_components/_UserDashPage";
 import AddPropertyForm from "./_components/_AddPropertyPage";
+import PropertyPage from './_components/_PropertyPage/PropertyPage';
 
 class App extends Component {
 
@@ -31,6 +32,7 @@ class App extends Component {
             <Route exact path="/dash" component={ UserDashPage } />
             <Route exact path="/add-property" component={ AddPropertyForm } />
             <Route exact path="/signout" component={ Home } />
+            <Route exact path="/properties/:id" component={ PropertyPage } />
           </Switch>
           <CopyRightFooter />
         </div>
