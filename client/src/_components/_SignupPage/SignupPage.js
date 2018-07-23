@@ -49,6 +49,7 @@ class SignupPage extends Component {
       <SigninNav />
       <div className="container">
         <Card>
+          <div id="card-content">
           <h1 style={{color:'black'}}>Sign up!</h1>
           <Row>
             <Input 
@@ -91,6 +92,7 @@ class SignupPage extends Component {
           </Button>
           <br/><br/>
           <p className="flow-text">Already have a login? <a href="/signin">Click here </a>to sign in.</p>
+            </div>
           </Card>
       </div>
     </div>

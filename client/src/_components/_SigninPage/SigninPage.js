@@ -9,7 +9,7 @@ class SigninPage extends Component {
     password: "",
   };
 
-  updateUser (userObject) {
+  updateUser(userObject) {
     this.setState(userObject)
   }
 
@@ -25,7 +25,7 @@ class SigninPage extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    
+
     axios.post('/api/signin', {
       username: this.state.username,
       password: this.state.password
@@ -40,48 +40,50 @@ class SigninPage extends Component {
           this.props.history.push("/dash")
         }
       })
-        .catch(error => {
-          console.log(`Login error: ${error}`)
-        })
+      .catch(error => {
+        console.log(`Login error: ${error}`)
+      })
   };
   render() {
     return (
       <div className="root">
-      <SignupNav />
-      <div className="container">
-        <Card>
-          <h1 style={{color:'black'}}>Sign In!</h1>
-          <Row>
-            <Input 
-              s={6}
-              type="text"
-              name="username"
-              label="Username"
-              value={this.state.username}
-              onChange={this.handleInputChange}
-            />
-            <Input
-              s={6}
-              type="password"
-              name="password"
-              label="password"
-              value={this.state.Password} 
-              onChange={this.handleInputChange}
-            />
-          </Row>
-          <Button
-            type="submit"
-            onClick={this.handleFormSubmit}>
-            submit
+        <SignupNav />
+        <div className="container">
+          <Card>
+            <div id="card-content">
+              <h1 style={{ color: 'black' }}>Sign In!</h1>
+              <Row>
+                <Input
+                  s={6}
+                  type="text"
+                  name="username"
+                  label="Username"
+                  value={this.state.username}
+                  onChange={this.handleInputChange}
+                />
+                <Input
+                  s={6}
+                  type="password"
+                  name="password"
+                  label="password"
+                  value={this.state.Password}
+                  onChange={this.handleInputChange}
+                />
+              </Row>
+              <Button
+                type="submit"
+                onClick={this.handleFormSubmit}>
+                submit
           </Button>
-          <br/><br/>
-          <p className="flow-text">Don't have a login yet? <a href="/signup">Click here </a>to create one.</p>
+              <br /><br />
+              <p className="flow-text">Don't have a login yet? <a href="/signup">Click here </a>to create one.</p>
+            </div>
           </Card>
+        </div>
       </div>
-    </div>
     )
   }
-  
+
 }
 
 export default SigninPage;

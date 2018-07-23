@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Button, Row } from 'react-materialize';
+import { Card, Collapsible, CollapsibleItem } from 'react-materialize';
 import API from '../../utils/API'
 import LogOutNav from '../Navs/LogOutNav';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
+import { faChevronCircleLeft, faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
 
-import "./PropertyPage.css"
 class PropertyPage extends Component {
   state = {
     property: {}
@@ -21,28 +20,40 @@ class PropertyPage extends Component {
 
   render() {
     return (
-      <div className="app>">
+      <div className='app>'>
         <LogOutNav />
-        <div className="container">
+        <div className='container'>
           <Card>
 
-          <Link to="/dash"><FontAwesomeIcon icon={faChevronCircleLeft} /> Return to Dashboard</Link>
+            <div id='card-content'>
+              <Link to='/dash'><FontAwesomeIcon icon={faChevronCircleLeft} /> Return to Dashboard</Link>
 
-            <div className='center-align'>
-              <h2>{this.state.property.homeName}</h2>
-              <img src={this.state.property.image}/>
+              <div className='center-align'>
+                <h2>{this.state.property.homeName}</h2>
+                <img src={this.state.property.image} alt="Property" />
+              </div>
+
+              <h5>Basic Information:</h5>
+              <ul>
+                <li className='flow-text basic-list-item'>{this.state.property.streetAddress}</li>
+                <li className='flow-text basic-list-item'>{this.state.property.city}, {this.state.property.state} {this.state.property.zipCode}</li>
+                <li className='flow-text basic-list-item'>{this.state.property.phone}</li>
+              </ul>
             </div>
 
-            <h5>Basic Information:</h5>
-            <ul>
-              <li className="flow-text basic-list-item">{this.state.property.streetAddress}</li>
-              <li className="flow-text basic-list-item">{this.state.property.city}, {this.state.property.state} {this.state.property.zipCode}</li>
-              <li className="flow-text basic-list-item">{this.state.property.phone}</li>
-            </ul>
+            <Collapsible>
+              <CollapsibleItem
+                header={<p className="flow-text">Contacts<span><FontAwesomeIcon icon={faAngleDoubleDown} className='expand-icon' /></span></p>}
+                className='collapsible-item'>
+                <div>
+                  <h1>{this.state.property.neighbor1Name}</h1>
+                </div>
 
-            <Button>Click here to add more info</Button>
+              </CollapsibleItem>
+            </Collapsible>
 
           </Card>
+
         </div>
       </div>
     )

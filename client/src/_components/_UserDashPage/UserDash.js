@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
 
 import LogOutNav from '../Navs/LogOutNav';
-import './UserDash.css';
 
 class UserDash extends Component {
   state = {
@@ -30,7 +29,7 @@ class UserDash extends Component {
       })
       .catch(err => console.log(err));
   };
-  
+
   deleteProperty = id => {
     API.delete('/properties', id)
       .then(res => this.loadProperties())
@@ -39,68 +38,69 @@ class UserDash extends Component {
 
   render() {
     return (
-      <div className='container'>
-        
+      <div className='app'>
+
         <LogOutNav />
-        
-        {this.state.properties.length ? (
-          <Card>
-            <Collapsible popout>
-              {this.state.properties.map(property => (
-                <CollapsibleItem
-                  header={
-                    <div>
-                      <strong>{property.homeName}</strong><span><FontAwesomeIcon icon={faAngleDoubleDown} className='expand-icon' /></span>
-                    </div>}
-                  key={property._id}
-                  icon='place'>
-                  <ul className='property-info'>
-                    <li><img src={property.image} alt={property.homeName} /></li>
-                    <li><strong>Name:</strong> {property.homeName}</li>
-                    <li><strong>Address:</strong> {property.streetAddress}, {property.city}, {property.state} {property.zip}</li>
-                    <li><strong>Main Phone:</strong> {property.phone}</li>
-                  </ul>
+        <div className='container'>
+          {this.state.properties.length ? (
+            <Card>
+              <div id="card-content">
+                <Collapsible popout>
+                  {this.state.properties.map(property => (
+                    <CollapsibleItem
+                      header={
+                        <div>
+                          <strong>{property.homeName}</strong><span><FontAwesomeIcon icon={faAngleDoubleDown} className='expand-icon' /></span>
+                        </div>}
+                      key={property._id}
+                      icon='place'>
+                      <ul className='property-info'>
+                        <li><img src={property.image} alt={property.homeName} /></li>
+                        <li><strong>Name:</strong> {property.homeName}</li>
+                        <li><strong>Address:</strong> {property.streetAddress}, {property.city}, {property.state} {property.zip}</li>
+                        <li><strong>Main Phone:</strong> {property.phone}</li>
+                      </ul>
 
-                  <Row>
-                    <Link to={ `/properties/${property._id}` } >
-                      <Button className='view-button'>View & Edit</Button>
-                    </Link>
-                    <Button className='delete-button' onClick={() => this.deleteProperty(property._id)} >Delete</Button>
-                  </Row>
+                      <Row>
+                        <Link to={`/properties/${property._id}`} >
+                          <Button className='view-button'>View & Edit</Button>
+                        </Link>
+                        <Button className='delete-button' onClick={() => this.deleteProperty(property._id)} >Delete</Button>
+                      </Row>
 
-                </CollapsibleItem>
-              ))}
-            </Collapsible>
+                    </CollapsibleItem>
+                  ))}
+                </Collapsible>
 
-            <div className='center-align'>
-              <a href='/add-property'>
-                <Button 
-                  floating large 
-                  id='add-button' 
-                  waves='light'>
-                    <FontAwesomeIcon 
-                      icon={faPlus} 
-                      className='add-icon' />
-                </Button>
-              </a>
-            </div>
+                <div className='center-align'>
+                  <a href='/add-property'>
+                    <Button
+                      floating large
+                      id='add-button'
+                      waves='light'>
+                      <FontAwesomeIcon
+                        icon={faPlus}
+                        className='add-icon' />
+                    </Button>
+                  </a>
+                </div>
+              </div>
+            </Card>
 
-          </Card>
+          ) : (
 
-        ) : (
-
-          <Card>
-            <div className='center-align'>
-              <h3>No Results to Display</h3>
-              <p className='flow-text'>Click the button below to add your first property</p>
-              <a href='/add-property'><Button floating large className='add-button' id='add-button' waves='light'><FontAwesomeIcon icon={faPlus} className='add-icon' /></Button></a>
-            </div>
-          </Card>
-        )};
-
+              <Card>
+                <div id="card-content" className='center-align'>
+                  <h3>No Results to Display</h3>
+                  <p className='flow-text'>Click the button below to add your first property</p>
+                  <a href='/add-property'><Button floating large className='add-button' id='add-button' waves='light'><FontAwesomeIcon icon={faPlus} className='add-icon' /></Button></a>
+                </div>
+              </Card>
+            )};
+        </div>
       </div>
-    );
-  };
-};
-
+        );
+      };
+    };
+    
 export default UserDash;
