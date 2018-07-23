@@ -5,7 +5,7 @@ body {
   background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75) ), url('./assets/images/suburb.jpg');
   padding-bottom: 6rem;
   min-height: 100%;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 html {

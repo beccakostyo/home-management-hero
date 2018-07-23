@@ -3,8 +3,6 @@ import { Navbar, NavItem } from 'react-materialize';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
 
-//import './LogOutNav.css';
-
 import LogOutButton from '../../Buttons/LogOutButton';
 
 const LogOutNav = () => (

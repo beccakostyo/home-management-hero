@@ -3,8 +3,6 @@ import { Navbar, NavItem } from 'react-materialize';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
 
-import './SigninNav.css';
-
 import SigninButton from '../../Buttons/SigninButton';
 
 const SigninNav = () => (
