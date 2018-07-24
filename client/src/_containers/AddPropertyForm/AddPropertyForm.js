@@ -58,10 +58,14 @@ class AddPropertyForm extends Component {
           policeDeptPhone: '',
           policeDeptAdd: '',
           fireDeptName: '',
-          fireDeptPhone: '',
           fireDeptAdd: '',
+          hospitalName: '',
+          hospitalAdd: '',
+          urgentCareName: '',
+          urgentCareAdd: '',
           hoaName: '',
           hoaPhone: '',
+          hoaWebsite: '',
           neighbor1Name: '',
           neighbor1Phone: '',
           neighbor2Name: '',
@@ -97,10 +101,14 @@ class AddPropertyForm extends Component {
         policeDeptPhone: this.state.policeDeptPhone,
         policeDeptAdd: this.state.policeDeptAdd,
         fireDeptName: this.state.fireDeptName,
-        fireDeptPhone: this.state.fireDeptPhone,
         fireDeptAdd: this.state.fireDeptAdd,
+        hospitalName: this.state.hospitalName,
+        hospitalAdd: this.state.hospitalAdd,
+        urgentCareName: this.state.urgentCareName,
+        urgentCareAdd: this.state.urgentCareAdd,
         hoaName: this.state.hoaName,
         hoaPhone: this.state.hoaName,
+        hoaWebsite: this.state.hoaWebsite,
         neighbor1Name: this.state.neighbor1Name,
         neighbor1Phone: this.state.neighbor1Phone,
         neighbor2Name: this.state.neighbor2Name,
@@ -262,7 +270,7 @@ class AddPropertyForm extends Component {
             <Row>
               <h6 className="contact-form-subheader">Nearest Fire Department</h6>
               <Input
-                s={4}
+                s={6}
                 type='text'
                 maxLength="50"
                 name='fireDeptName'
@@ -271,16 +279,7 @@ class AddPropertyForm extends Component {
                 onChange={this.handleInputChange}
               />
               <Input
-                s={4}
-                type='text'
-                maxLength="50"
-                name='fireDeptPhone'
-                label='Phone'
-                value={this.state.fireDeptPhone}
-                onChange={this.handleInputChange}
-              />
-              <Input
-                s={4}
+                s={6}
                 type='text'
                 maxLength="50"
                 name='fireDeptAdd'
@@ -291,9 +290,53 @@ class AddPropertyForm extends Component {
             </Row>
 
             <Row>
-              <h6 className="contact-form-subheader">Homeowners Association</h6>
+              <h6 className="contact-form-subheader">Nearest Hospital</h6>
               <Input
                 s={6}
+                type='text'
+                maxLength="50"
+                name='hospitalName'
+                label='Name'
+                value={this.state.hospitalName}
+                onChange={this.handleInputChange}
+              />
+              <Input
+                s={6}
+                type='text'
+                maxLength="50"
+                name='hospitalAdd'
+                label='Address'
+                value={this.state.hospitalAdd}
+                onChange={this.handleInputChange}
+              />
+            </Row>
+
+            <Row>
+              <h6 className="contact-form-subheader">Nearest Urgent Care</h6>
+              <Input
+                s={6}
+                type='text'
+                maxLength="50"
+                name='urgentCareName'
+                label='Name'
+                value={this.state.urgentCareName}
+                onChange={this.handleInputChange}
+              />
+              <Input
+                s={6}
+                type='text'
+                maxLength="50"
+                name='urgentCareAdd'
+                label='Address'
+                value={this.state.urgentCareAdd}
+                onChange={this.handleInputChange}
+              />
+            </Row>
+
+            <Row>
+              <h6 className="contact-form-subheader">Homeowners Association</h6>
+              <Input
+                s={4}
                 type='text'
                 maxLength="50"
                 name='hoaName'
@@ -302,12 +345,21 @@ class AddPropertyForm extends Component {
                 onChange={this.handleInputChange}
               />
               <Input
-                s={6}
+                s={4}
                 type='text'
                 maxLength="50"
                 name='hoaPhone'
                 label='Phone'
                 value={this.state.hoaPhone}
+                onChange={this.handleInputChange}
+              />
+              <Input
+                s={4}
+                type='text'
+                maxLength="50"
+                name='hoaWebsite'
+                label='Website'
+                value={this.state.hoaWebsite}
                 onChange={this.handleInputChange}
               />
             </Row>
