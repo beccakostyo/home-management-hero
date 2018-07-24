@@ -50,11 +50,23 @@ const propertySchema = new Schema({
     type: String,
     required: false
   },
-  fireDeptPhone: { 
+  fireDeptAdd: {
     type: String,
     required: false
   },
-  fireDeptAdd: {
+  hospitalName: {
+    type: String,
+    required: false
+  },
+  hospitalAdd: {
+    type: String,
+    required: false
+  },
+  urgentCareName: {
+    type: String,
+    required: false
+  },
+  urgentCareAdd: {
     type: String,
     required: false
   },
@@ -63,6 +75,10 @@ const propertySchema = new Schema({
     required: false 
   },
   hoaPhone: {
+    type: String,
+    required: false
+  },
+  hoaWebsite: {
     type: String,
     required: false
   },
@@ -91,7 +107,6 @@ const propertySchema = new Schema({
     required: false
   }
 });
-
 
 const Property = mongoose.model('Property', propertySchema)
 

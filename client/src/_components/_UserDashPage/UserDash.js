@@ -45,6 +45,8 @@ class UserDash extends Component {
           {this.state.properties.length ? (
             <Card>
               <div id="card-content">
+                <h3 className="center-align">Your Properties:</h3>
+                <p className="center-align flow-text"><em>(click to expand)</em></p>
                 <Collapsible popout>
                   {this.state.properties.map(property => (
                     <CollapsibleItem

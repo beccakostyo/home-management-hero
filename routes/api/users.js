@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const usersController = require('../../controllers/usersController');
-const passport = require('../../passport');
 
 router.route('/')
   .post(usersController.createNewUser);
