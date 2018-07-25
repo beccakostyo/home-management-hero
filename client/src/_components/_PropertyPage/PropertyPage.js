@@ -3,19 +3,24 @@ import { Link }             from 'react-router-dom';
 import API                  from '../../utils/API';
 import LogOutNav            from '../Navs/LogOutNav';
 import { FontAwesomeIcon }  from '@fortawesome/react-fontawesome';
-import { Card, 
-         Collapsible, 
-         CollapsibleItem, 
-         Collection, 
-         CollectionItem }   from 'react-materialize';
-import { faChevronCircleLeft, 
-         faAngleDoubleDown, 
-         faTaxi, 
-         faFireExtinguisher, 
-         faHospitalSymbol, 
-         faStethoscope, 
-         faAddressCard, 
-         faWarehouse }      from '@fortawesome/free-solid-svg-icons';
+import {
+  Button,
+  Card,
+  Collapsible,
+  CollapsibleItem,
+  Collection,
+  CollectionItem
+}                           from 'react-materialize';
+import {
+  faChevronCircleLeft,
+  faAngleDoubleDown,
+  faTaxi,
+  faFireExtinguisher,
+  faHospitalSymbol,
+  faStethoscope,
+  faAddressCard,
+  faWarehouse
+}                           from '@fortawesome/free-solid-svg-icons';
 
 class PropertyPage extends Component {
   state = {
@@ -32,7 +37,7 @@ class PropertyPage extends Component {
     if (this.state.property.image === '') {
       return <p><em>No image</em></p>
     } else {
-      return <img src={this.state.property.image} style={{width: '50%'}} alt={this.state.property.homeName} />
+      return <img src={this.state.property.image} style={{ width: '50%' }} alt={this.state.property.homeName} />
     }
   }
 
@@ -42,11 +47,14 @@ class PropertyPage extends Component {
         <LogOutNav />
         <div className='container'>
           <Card>
-          
-            <div id='card-content'>
+              <div id='card-content'>
               <Link to='/dash'><FontAwesomeIcon icon={faChevronCircleLeft} /> Return to Dashboard</Link>
+
+              <Link to={`/properties/edit/${this.state.property._id}`} >
+                <Button className='right-float'>Edit</Button>
+              </Link>
               <div className='center-align'>
-                <h2>{this.state.property.homeName}</h2>
+                <h3>{this.state.property.homeName}</h3>
                 {this.renderImage()}
                 <h5 className='basic-info-header'>Basic Information:</h5>
                 <ul>
@@ -101,7 +109,7 @@ class PropertyPage extends Component {
                 </Collection>
               </CollapsibleItem>
 
-              <CollapsibleItem 
+              <CollapsibleItem
                 header={<p className='flow-text'>Notes<span><FontAwesomeIcon icon={faAngleDoubleDown} className='expand-icon' /></span></p>}
                 className='collapsible-item'>
               </CollapsibleItem>

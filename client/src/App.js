@@ -14,7 +14,8 @@ import SignupPage from "./_components/_SignupPage";
 import UserDashPage from "./_components/_UserDashPage";
 import AddPropertyForm from "./_components/_AddPropertyPage";
 import PropertyPage from './_components/_PropertyPage/PropertyPage';
-import NoMatch from './_components/_NoMatch/NoMatch'
+import NoMatch from './_components/_NoMatch/NoMatch';
+import EditProperty from "./_containers/EditProperty/EditProperty";
 
 class App extends Component {
   render() {
@@ -32,7 +33,8 @@ class App extends Component {
             <Route exact path="/dash" component={ UserDashPage } />
             <Route exact path="/add-property" component={ AddPropertyForm } />
             <Route exact path="/signout" component={ Home } />
-            <Route exact path="/properties/:id" component={ PropertyPage } />
+            <Route exact path="/properties/show/:id" component={ PropertyPage } />
+            <Route exact path="/properties/edit/:id" component={ EditProperty } />
             <Route component={ NoMatch } />
           </Switch>
           <CopyRightFooter />

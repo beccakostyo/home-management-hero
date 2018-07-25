@@ -69,7 +69,7 @@ class UserDash extends Component {
                       </ul>
 
                       <Row>
-                        <Link to={`/properties/${property._id}`} >
+                        <Link to={`/properties/show/${property._id}`} >
                           <Button className='view-button'>View & Edit</Button>
                         </Link>
                         <Button className='delete-button' onClick={() => this.deleteProperty(property._id)} >Delete</Button>

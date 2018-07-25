@@ -100,6 +100,29 @@
 .add-form-icon, .view-prop-icon {
   margin-right: 10px;
 }
+
+/* ====== Edit Property ===== */
+/* ========================== */
+.edit-label {
+  color: #26a69a;
+  font-size: 16px;
+  vertical-align: baseline
+}
+.edit-input {
+  margin-top: -20px !important;
+  margin-left: 20px !important;
+  width: 90% !important;
+  margin-bottom: 10px !important;
+}
+.edit-input-phone {
+  margin-top: -20px !important;
+  margin-left: 20px !important;
+  width: 20% !important;
+  margin-bottom: 10px !important;
+}
+.edit-form-row {
+  margin-bottom: 0 !important;
+}
 /* ====== Help ====== */
 /* ================== */
 .guidance-pic {

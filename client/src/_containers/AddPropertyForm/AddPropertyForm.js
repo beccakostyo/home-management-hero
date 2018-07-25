@@ -1,20 +1,22 @@
-import React, { Component } from 'react';
-import { withRouter }       from 'react-router-dom';
-import API                  from '../../utils/API';
-import Dropzone             from 'react-dropzone';
-import request              from 'superagent';
-import { FontAwesomeIcon }  from '@fortawesome/react-fontawesome';
+import React, { Component }   from 'react';
+import { withRouter }         from 'react-router-dom';
+import API                    from '../../utils/API';
+import Dropzone               from 'react-dropzone';
+import request                from 'superagent';
+import { FontAwesomeIcon }    from '@fortawesome/react-fontawesome';
 import { Row, 
-         Input, 
+         Input,
+         Link, 
          Button, 
          Collapsible, 
-         CollapsibleItem }  from 'react-materialize';
+         CollapsibleItem }    from 'react-materialize';
 import { faTaxi, 
          faFireExtinguisher, 
          faHospitalSymbol, 
          faStethoscope, 
          faAddressCard, 
-         faWarehouse }      from '@fortawesome/free-solid-svg-icons';
+         faWarehouse,
+         faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
 const CLOUDINARY_UPLOAD_PRESET = process.env.CLOUDINARY_PRESET || 'is8ybozh',
       CLOUDINARY_UPLOAD_URL    = process.env.CLOUDINARY_URL    || 'https://api.cloudinary.com/v1_1/dexu8dqab/image/upload';
@@ -161,13 +163,10 @@ class AddPropertyForm extends Component {
     });
   }
 
-  handleClick () {
-    this.setState({policeDeptName: 'N/A'})
-  }
-
   render() {
     return (
       <div>
+
         <Collapsible defaultActiveKey={0} accordion>
           <CollapsibleItem header={<p className='flow-text collapsible-header-add-property'><strong>Basic Information</strong></p>}>
             <div className='add-property-form-container'>
@@ -187,6 +186,7 @@ class AddPropertyForm extends Component {
                   s={12}
                   type='text'
                   name='streetAddress'
+                  maxLength='50'
                   label='* Street Address'
                   value={this.state.streetAddress}
                   onChange={this.handleInputChange}
@@ -349,37 +349,6 @@ class AddPropertyForm extends Component {
             </Row>
 
             <Row>
-              <h6 className='contact-form-subheader'><FontAwesomeIcon className='add-form-icon' icon={faWarehouse} /> Homeowners Association</h6>
-              <Input
-                s={4}
-                type='text'
-                maxLength='50'
-                name='hoaName'
-                label='Name'
-                value={this.state.hoaName}
-                onChange={this.handleInputChange}
-              />
-              <Input
-                s={4}
-                type='text'
-                maxLength='50'
-                name='hoaPhone'
-                label='Phone'
-                value={this.state.hoaPhone}
-                onChange={this.handleInputChange}
-              />
-              <Input
-                s={4}
-                type='text'
-                maxLength='50'
-                name='hoaWebsite'
-                label='Website'
-                value={this.state.hoaWebsite}
-                onChange={this.handleInputChange}
-              />
-            </Row>
-
-            <Row>
               <h6 className='contact-form-subheader'><FontAwesomeIcon className='add-form-icon' icon={faAddressCard} /> Neighbor Information</h6>
               <Input
                 s={6}
@@ -442,6 +411,37 @@ class AddPropertyForm extends Component {
                 onChange={this.handleInputChange}
               />
             </Row>
+            <Row>
+              <h6 className='contact-form-subheader'><FontAwesomeIcon className='add-form-icon' icon={faWarehouse} /> Homeowners Association</h6>
+              <Input
+                s={4}
+                type='text'
+                maxLength='50'
+                name='hoaName'
+                label='Name'
+                value={this.state.hoaName}
+                onChange={this.handleInputChange}
+              />
+              <Input
+                s={4}
+                type='text'
+                maxLength='50'
+                name='hoaPhone'
+                label='Phone'
+                value={this.state.hoaPhone}
+                onChange={this.handleInputChange}
+              />
+              <Input
+                s={4}
+                type='text'
+                maxLength='50'
+                name='hoaWebsite'
+                label='Website'
+                value={this.state.hoaWebsite}
+                onChange={this.handleInputChange}
+              />
+            </Row>
+
 
           </CollapsibleItem>
         </Collapsible>
