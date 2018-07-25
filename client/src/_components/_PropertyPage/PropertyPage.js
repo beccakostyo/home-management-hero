@@ -32,7 +32,7 @@ class PropertyPage extends Component {
     if (this.state.property.image === '') {
       return <p><em>No image</em></p>
     } else {
-      return <img src={this.state.property.image} alt={this.state.property.homeName} />
+      return <img src={this.state.property.image} style={{width: '50%'}} alt={this.state.property.homeName} />
     }
   }
 

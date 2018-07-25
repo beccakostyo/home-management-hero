@@ -1,11 +1,11 @@
 import React           from 'react';
 import { Card }        from 'react-materialize';
-import SignupNav       from '../Navs/SignupNav'
 import AddPropertyForm from '../../_containers/AddPropertyForm';
+import LogOutNav       from '../Navs/LogOutNav';
 
 const AddPropertyPage = () => (
   <div className='app'>
-    <SignupNav />
+    <LogOutNav />
     <div className='container'>
       <Card>
         <div className='center-align' id='card-content'>
