@@ -97,7 +97,29 @@
   font-weight: bold;
   color: #378f83 !important;
 }
+.add-form-icon, .view-prop-icon {
+  margin-right: 10px;
+}
+/* ====== Help ====== */
+/* ================== */
+.guidance-pic {
+width: 100%;
+}
+.or-guidance {
+  margin: 0;
+}
 
+/* ===== Contact ===== */
+/* =================== */
+#email-icon, .prefix{
+  margin-left: 0 !important
+}
+.materialize-textarea {
+  padding-bottom: 0 !important;
+}
+label {
+  text-align: left;
+}
 /* ====== Navs ====== */
 /* ================== */
 .transparent-nav {

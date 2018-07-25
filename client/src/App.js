@@ -16,7 +16,6 @@ import AddPropertyForm from "./_components/_AddPropertyPage";
 import PropertyPage from './_components/_PropertyPage/PropertyPage';
 
 class App extends Component {
-
   render() {
     return (
       <Router>

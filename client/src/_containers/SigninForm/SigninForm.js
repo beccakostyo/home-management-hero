@@ -7,6 +7,7 @@ class SigninForm extends Component {
   state = {
     username: "",
     password: "",
+    loggedIn: false
   };
 
   updateUser(userObject) {

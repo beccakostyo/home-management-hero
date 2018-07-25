@@ -48,7 +48,7 @@ class UserDash extends Component {
                 <h3 className="center-align">Your Properties:</h3>
                 <p className="center-align flow-text"><em>(click to expand)</em></p>
                 <Collapsible popout>
-                  {this.state.properties.map(property => (
+                  {this.state.properties.map(property => ( 
                     <CollapsibleItem
                       header={
                         <div>
@@ -57,7 +57,9 @@ class UserDash extends Component {
                       key={property._id}
                       icon='place'>
                       <ul className='property-info'>
-                        <li><img src={property.image} alt={property.homeName} /></li>
+                        {property.image !== "" && 
+                          <li><img src={property.image} alt={property.homeName} /></li>
+                        }
                         <li><strong>Name:</strong> {property.homeName}</li>
                         <li><strong>Address:</strong> {property.streetAddress}, {property.city}, {property.state} {property.zip}</li>
                         <li><strong>Main Phone:</strong> {property.phone}</li>

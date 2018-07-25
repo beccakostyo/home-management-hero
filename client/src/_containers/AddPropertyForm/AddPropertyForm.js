@@ -5,6 +5,9 @@ import API from '../../utils/API';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTaxi, faFireExtinguisher, faHospitalSymbol, faStethoscope, faAddressCard, faWarehouse } from '@fortawesome/free-solid-svg-icons';
+
 const CLOUDINARY_UPLOAD_PRESET = process.env.CLOUDINARY_PRESET || 'is8ybozh';
 const CLOUDINARY_UPLOAD_URL = process.env.CLOUDINARY_URL || 'https://api.cloudinary.com/v1_1/dexu8dqab/image/upload';
 
@@ -237,7 +240,7 @@ class AddPropertyForm extends Component {
           <CollapsibleItem  header={<p className='flow-text collapsible-header-add-property'><strong>Important Contacts</strong></p>}>
 
             <Row>
-              <h6 className="contact-form-subheader">Nearest Police Department</h6>
+              <h6 className="contact-form-subheader"><FontAwesomeIcon className="add-form-icon" icon={faTaxi} />   Nearest Police Department</h6>
               <Input
                 s={4}
                 type='text'
@@ -268,7 +271,7 @@ class AddPropertyForm extends Component {
             </Row>
 
             <Row>
-              <h6 className="contact-form-subheader">Nearest Fire Department</h6>
+              <h6 className="contact-form-subheader"><FontAwesomeIcon className="add-form-icon" icon={faFireExtinguisher} /> Nearest Fire Department</h6>
               <Input
                 s={6}
                 type='text'
@@ -290,7 +293,7 @@ class AddPropertyForm extends Component {
             </Row>
 
             <Row>
-              <h6 className="contact-form-subheader">Nearest Hospital</h6>
+              <h6 className="contact-form-subheader"><FontAwesomeIcon className="add-form-icon" icon={faHospitalSymbol} /> Nearest Hospital</h6>
               <Input
                 s={6}
                 type='text'
@@ -312,7 +315,7 @@ class AddPropertyForm extends Component {
             </Row>
 
             <Row>
-              <h6 className="contact-form-subheader">Nearest Urgent Care</h6>
+              <h6 className="contact-form-subheader"><FontAwesomeIcon className="add-form-icon" icon={faStethoscope} /> Nearest Urgent Care</h6>
               <Input
                 s={6}
                 type='text'
@@ -334,7 +337,7 @@ class AddPropertyForm extends Component {
             </Row>
 
             <Row>
-              <h6 className="contact-form-subheader">Homeowners Association</h6>
+              <h6 className="contact-form-subheader"><FontAwesomeIcon className="add-form-icon" icon={faWarehouse} /> Homeowners Association</h6>
               <Input
                 s={4}
                 type='text'
@@ -365,7 +368,7 @@ class AddPropertyForm extends Component {
             </Row>
 
             <Row>
-              <h6 className="contact-form-subheader">Neighbor Information</h6>
+              <h6 className="contact-form-subheader"><FontAwesomeIcon className="add-form-icon" icon={faAddressCard} /> Neighbor Information</h6>
               <Input
                 s={6}
                 type='text'
