@@ -165,5 +165,11 @@ label {
   margin-right: 70px;
   color: #ececec;
 }
+ 
+/* ===== 404 Page ===== */
+/* ==================== */
+.no-match {
+  color: white;
+}
 
 

@@ -14,6 +14,7 @@ import SignupPage from "./_components/_SignupPage";
 import UserDashPage from "./_components/_UserDashPage";
 import AddPropertyForm from "./_components/_AddPropertyPage";
 import PropertyPage from './_components/_PropertyPage/PropertyPage';
+import NoMatch from './_components/_NoMatch/NoMatch'
 
 class App extends Component {
   render() {
@@ -32,6 +33,7 @@ class App extends Component {
             <Route exact path="/add-property" component={ AddPropertyForm } />
             <Route exact path="/signout" component={ Home } />
             <Route exact path="/properties/:id" component={ PropertyPage } />
+            <Route component={ NoMatch } />
           </Switch>
           <CopyRightFooter />
         </div>
