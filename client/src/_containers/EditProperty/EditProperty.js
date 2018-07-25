@@ -86,7 +86,7 @@ class EditProperty extends Component {
               <Collapsible>
                 <CollapsibleItem header={<p className='flow-text collapsible-header-add-property'><strong>Edit Basic Information</strong></p>}>
                   <div className='form-group'>
-                    <label className='edit-label'>Home Name</label>
+                    <label className='edit-label'>Property Name</label>
                     <input 
                       className='edit-input' 
                       name='homeName' 
@@ -96,7 +96,7 @@ class EditProperty extends Component {
                   </div>
                   <div className='form-group'>
                     <Row className='edit-form-row'>
-                      <Col s={6}>
+                      <Col s={12}>
                         <label className='edit-label'>Street Address</label>
                         <input 
                           className='edit-input' 
@@ -105,16 +105,26 @@ class EditProperty extends Component {
                           value={this.state.property.streetAddress} 
                           onChange={this.onChange} />
                       </Col>
-                      <Col s={3}>
-                        <label className='edit-label'>City</label>
+                    </Row>
+                    <Row className='edit-form-row'> 
+                      <Col s={5}>
+                        <label className='edit-label'>City</label><br/>
                         <input 
-                          className='edit-input' 
+                          className='edit-input edit-input-address-info' 
                           name='city' 
                           value={this.state.property.city} 
                           onChange={this.onChange} />
                       </Col>
-                      <Col s={2}>
-                        <label className='edit-label'>Zip Code</label>
+                      <Col s={3}>
+                        <label className='edit-label'>State</label><br/>
+                        <input 
+                          className='edit-input edit-input-address-info' 
+                          name='state' 
+                          value={this.state.property.state} 
+                          onChange={this.onChange} />
+                      </Col>
+                      <Col s={3}>
+                        <label className='edit-label'>Zip</label><br/>
                         <input 
                           className='edit-input' 
                           name='zipCode' 
@@ -162,10 +172,12 @@ class EditProperty extends Component {
                     </Row>
                   </div>
                 </CollapsibleItem>
+
                 <CollapsibleItem header={<p className='flow-text collapsible-header-add-property'><strong>Edit Contacts</strong></p>}>
                   <Row>
+                  <h6 className='contact-form-subheader'><FontAwesomeIcon className='add-form-icon' icon={faTaxi} />   Nearest Police Department</h6>
                     <Col s={4}>
-                      <label className='edit-label'><FontAwesomeIcon className='add-form-icon' icon={faTaxi} />   Nearest Police Dept Name</label>
+                      <label className='edit-label'>Name</label>
                       <input
                         className='edit-input' 
                         type='text'
@@ -200,8 +212,9 @@ class EditProperty extends Component {
                   </Row>
 
                   <Row>
+                    <h6 className='contact-form-subheader'><FontAwesomeIcon className='add-form-icon' icon={faFireExtinguisher} /> Nearest Fire Department</h6>
                     <Col s={6}>
-                      <label className='edit-label'><FontAwesomeIcon className='add-form-icon' icon={faFireExtinguisher} /> Nearest Fire Dept Name</label>
+                      <label className='edit-label'>Name</label>
                       <input
                         className='edit-input' 
                         type='text'
@@ -225,8 +238,9 @@ class EditProperty extends Component {
                   </Row>
 
                   <Row>
+                    <h6 className='contact-form-subheader'><FontAwesomeIcon className='add-form-icon' icon={faHospitalSymbol} /> Nearest Hospital</h6>
                     <Col s={6}>
-                      <label className='edit-label'><FontAwesomeIcon className='add-form-icon' icon={faHospitalSymbol} /> Nearest Hospital Name</label>
+                      <label className='edit-label'>Name</label>
                       <input
                         className='edit-input' 
                         type='text'
@@ -250,8 +264,9 @@ class EditProperty extends Component {
                   </Row>
 
                   <Row>
+                    <h6 className='contact-form-subheader'><FontAwesomeIcon className='add-form-icon' icon={faStethoscope} /> Nearest Urgent Care</h6>
                     <Col s={6}>
-                      <label className='edit-label'><FontAwesomeIcon className='add-form-icon' icon={faStethoscope} /> Nearest Urgent Care Name</label>
+                      <label className='edit-label'>Name</label>
                       <input
                         className='edit-input' 
                         type='text'
@@ -275,8 +290,9 @@ class EditProperty extends Component {
                   </Row>
 
                   <Row>
+                    <h6 className='contact-form-subheader'><FontAwesomeIcon className='add-form-icon' icon={faAddressCard} /> Neighbor Information</h6>
                     <Col s={6}>
-                      <label className='edit-label'><FontAwesomeIcon className='add-form-icon' icon={faAddressCard} /> Neighbor Name</label>
+                      <label className='edit-label'>Name</label>
                       <input
                         className='edit-input' 
                         type='text'
@@ -301,7 +317,7 @@ class EditProperty extends Component {
 
                   <Row>
                     <Col s={6}>
-                      <label className='edit-label'><FontAwesomeIcon className='add-form-icon' icon={faAddressCard} /> Neighbor Name</label>
+                      <label className='edit-label'>Name</label>
                       <input
                         className='edit-input' 
                         type='text'
@@ -325,7 +341,7 @@ class EditProperty extends Component {
                   </Row>
                   <Row>
                     <Col s={6}>
-                      <label className='edit-label'><FontAwesomeIcon className='add-form-icon' icon={faAddressCard} /> Neighbor Name</label>
+                      <label className='edit-label'>Name</label>
                       <input
                         className='edit-input' 
                         type='text'
@@ -347,9 +363,11 @@ class EditProperty extends Component {
                       />
                     </Col>
                   </Row>
+
                   <Row>
+                  <h6 className='contact-form-subheader'><FontAwesomeIcon className='add-form-icon' icon={faWarehouse} /> Homeowners Association</h6>
                   <Col s={4}>
-                    <label className='edit-label'><FontAwesomeIcon className='add-form-icon' icon={faWarehouse} /> Homeowners Association Name</label>
+                    <label className='edit-label'>Name</label>
                     <input
                       className='edit-input' 
                       type='text'
