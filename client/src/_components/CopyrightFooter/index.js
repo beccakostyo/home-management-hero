@@ -1,1 +1,1 @@
-export { default } from "./CopyrightFooter.js";
+export { default } from './CopyrightFooter.js';

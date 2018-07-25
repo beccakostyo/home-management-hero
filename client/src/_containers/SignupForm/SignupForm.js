@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import { withRouter} from 'react-router-dom';
-import axios from 'axios';
+import React, { Component }   from 'react';
+import { withRouter}          from 'react-router-dom';
+import axios                  from 'axios';
 import { Row, Input, Button } from 'react-materialize';
 
 class SignupForm extends Component {
   state = {
-    firstName: "",
-    lastName: "",
-    username: "",
-    password: "",
+    firstName: '',
+    lastName: '',
+    username: '',
+    password: '',
   };
 
   handleInputChange = event => {
@@ -34,7 +34,7 @@ class SignupForm extends Component {
         console.log(response)
         if (response.data) {
           console.log(`Successful signup!`)
-          this.props.history.push("/dash")
+          this.props.history.push('/dash')
         } else {
           console.log('Sign-up error')
         }
@@ -46,50 +46,49 @@ class SignupForm extends Component {
 
   render() {
     return (
-      <div className="root">
+      <div className='root'>
         <Row>
           <Input
             s={6}
-            type="text"
-            name="firstName"
-            label="First Name"
+            type='text'
+            name='firstName'
+            label='First Name'
             value={this.state.firstName}
             onChange={this.handleInputChange}
           />
           <Input
             s={6}
-            type="text"
-            name="lastName"
-            label="Last Name"
+            type='text'
+            name='lastName'
+            label='Last Name'
             value={this.state.lastName}
             onChange={this.handleInputChange}
           />
           <Input
             s={6}
-            type="text"
-            name="username"
-            label="Username"
+            type='text'
+            name='username'
+            label='Username'
             value={this.state.username}
             onChange={this.handleInputChange}
           />
           <Input
             s={6}
-            type="password"
-            name="password"
-            label="Password"
+            type='password'
+            name='password'
+            label='Password'
             value={this.state.Password}
             onChange={this.handleInputChange}
           />
         </Row>
         <Button
-          type="submit"
+          type='submit'
           onClick={this.handleFormSubmit}>
           submit
         </Button>
       </div>
     )
   }
-
 }
 
 export default withRouter(SignupForm);

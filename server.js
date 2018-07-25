@@ -1,12 +1,12 @@
-const express = require('express');
-const session = require('express-session');
-const bodyParser = require('body-parser');
-const logger = require('morgan');
-const mongoose = require('mongoose');
-const routes = require('./routes');
-const passport = require('passport');
-const app = express();
-const PORT = process.env.PORT || 3001;
+const express    = require('express'),
+      session    = require('express-session'),
+      bodyParser = require('body-parser'),
+      logger     = require('morgan'),
+      mongoose   = require('mongoose'),
+      routes     = require('./routes'),
+      passport   = require('passport'),
+      app        = express(),
+      PORT       = process.env.PORT || 3001;
 
 // Define middleware && logger here //
 app.use(logger('dev'));

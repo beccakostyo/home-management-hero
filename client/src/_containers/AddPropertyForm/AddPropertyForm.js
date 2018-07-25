@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
-import { Row, Input, Button, Collapsible, CollapsibleItem } from 'react-materialize';
-import { withRouter } from 'react-router-dom';
-import API from '../../utils/API';
-import Dropzone from 'react-dropzone';
-import request from 'superagent';
+import { withRouter }       from 'react-router-dom';
+import API                  from '../../utils/API';
+import Dropzone             from 'react-dropzone';
+import request              from 'superagent';
+import { FontAwesomeIcon }  from '@fortawesome/react-fontawesome';
+import { Row, 
+         Input, 
+         Button, 
+         Collapsible, 
+         CollapsibleItem }  from 'react-materialize';
+import { faTaxi, 
+         faFireExtinguisher, 
+         faHospitalSymbol, 
+         faStethoscope, 
+         faAddressCard, 
+         faWarehouse }      from '@fortawesome/free-solid-svg-icons';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTaxi, faFireExtinguisher, faHospitalSymbol, faStethoscope, faAddressCard, faWarehouse } from '@fortawesome/free-solid-svg-icons';
-
-const CLOUDINARY_UPLOAD_PRESET = process.env.CLOUDINARY_PRESET || 'is8ybozh';
-const CLOUDINARY_UPLOAD_URL = process.env.CLOUDINARY_URL || 'https://api.cloudinary.com/v1_1/dexu8dqab/image/upload';
+const CLOUDINARY_UPLOAD_PRESET = process.env.CLOUDINARY_PRESET || 'is8ybozh',
+      CLOUDINARY_UPLOAD_URL    = process.env.CLOUDINARY_URL    || 'https://api.cloudinary.com/v1_1/dexu8dqab/image/upload';
 
 class AddPropertyForm extends Component {
   state = {
@@ -76,14 +84,18 @@ class AddPropertyForm extends Component {
           neighbor3Name: '',
           neighbor3Phone: ''
         }),
-        this.props.history.push("/dash"),
+        this.props.history.push('/dash'),
     )
       .catch(err => console.log(err))
   };
 
   // Simple function to make sure all required fields have been populated //
   checkValidation() {
-    if (this.state.homeName && this.state.streetAddress && this.state.city && this.state.state && this.state.zipCode) {
+    if (this.state.homeName && 
+        this.state.streetAddress && 
+        this.state.city && 
+        this.state.state && 
+        this.state.zipCode) {
       return true
     };
   };
@@ -164,12 +176,12 @@ class AddPropertyForm extends Component {
                 <Input
                   s={12}
                   type='text'
-                  maxLength="25"
+                  maxLength='25'
                   name='homeName'
                   label='* Property Name'
                   value={this.state.homeName}
                   onChange={this.handleInputChange}
-                  data-success="win"
+                  data-success='win'
                 />
                 <Input
                   s={12}
@@ -199,7 +211,7 @@ class AddPropertyForm extends Component {
                 <Input
                   s={3}
                   type='text'
-                  pattern="[0-9]{5}"
+                  pattern='[0-9]{5}'
                   name='zipCode'
                   label='* Zip'
                   value={this.state.zipCode}
@@ -220,16 +232,16 @@ class AddPropertyForm extends Component {
                 <div className='pic-preview'>
                   {this.state.uploadFileCloudinaryUrl === '' ? null :
                     <div>
-                      <img value={this.state.image} src={this.state.uploadFileCloudinaryUrl} alt="Home" />
+                      <img value={this.state.image} src={this.state.uploadFileCloudinaryUrl} alt='Home' />
                     </div>}
                 </div>
-                <div className="dropzone-div">
+                <div className='dropzone-div'>
                   <Dropzone
-                    className="dropzone"
+                    className='dropzone'
                     multiple={false}
-                    accept="image/*"
+                    accept='image/*'
                     onDrop={this.onImageDrop.bind(this)}>
-                    <p className="dropzone-guidance flow-text">Click <strong>here</strong> to select a picture to upload.</p>
+                    <p className='dropzone-guidance flow-text'>Click <strong>here</strong> to select a picture to upload.</p>
                   </Dropzone>
                 </div>
               </Row>
@@ -240,11 +252,11 @@ class AddPropertyForm extends Component {
           <CollapsibleItem  header={<p className='flow-text collapsible-header-add-property'><strong>Important Contacts</strong></p>}>
 
             <Row>
-              <h6 className="contact-form-subheader"><FontAwesomeIcon className="add-form-icon" icon={faTaxi} />   Nearest Police Department</h6>
+              <h6 className='contact-form-subheader'><FontAwesomeIcon className='add-form-icon' icon={faTaxi} />   Nearest Police Department</h6>
               <Input
                 s={4}
                 type='text'
-                maxLength="50"
+                maxLength='50'
                 name='policeDeptName'
                 label='Name'
                 value={this.state.policeDeptName}
@@ -253,7 +265,7 @@ class AddPropertyForm extends Component {
               <Input
                 s={4}
                 type='text'
-                maxLength="50"
+                maxLength='50'
                 name='policeDeptPhone'
                 label='Phone'
                 value={this.state.policeDeptPhone}
@@ -262,7 +274,7 @@ class AddPropertyForm extends Component {
               <Input
                 s={4}
                 type='text'
-                maxLength="50"
+                maxLength='50'
                 name='policeDeptAdd'
                 label='Address'
                 value={this.state.policeDeptAdd}
@@ -271,11 +283,11 @@ class AddPropertyForm extends Component {
             </Row>
 
             <Row>
-              <h6 className="contact-form-subheader"><FontAwesomeIcon className="add-form-icon" icon={faFireExtinguisher} /> Nearest Fire Department</h6>
+              <h6 className='contact-form-subheader'><FontAwesomeIcon className='add-form-icon' icon={faFireExtinguisher} /> Nearest Fire Department</h6>
               <Input
                 s={6}
                 type='text'
-                maxLength="50"
+                maxLength='50'
                 name='fireDeptName'
                 label='Name'
                 value={this.state.fireDeptName}
@@ -284,7 +296,7 @@ class AddPropertyForm extends Component {
               <Input
                 s={6}
                 type='text'
-                maxLength="50"
+                maxLength='50'
                 name='fireDeptAdd'
                 label='Address'
                 value={this.state.fireDeptAdd}
@@ -293,11 +305,11 @@ class AddPropertyForm extends Component {
             </Row>
 
             <Row>
-              <h6 className="contact-form-subheader"><FontAwesomeIcon className="add-form-icon" icon={faHospitalSymbol} /> Nearest Hospital</h6>
+              <h6 className='contact-form-subheader'><FontAwesomeIcon className='add-form-icon' icon={faHospitalSymbol} /> Nearest Hospital</h6>
               <Input
                 s={6}
                 type='text'
-                maxLength="50"
+                maxLength='50'
                 name='hospitalName'
                 label='Name'
                 value={this.state.hospitalName}
@@ -306,7 +318,7 @@ class AddPropertyForm extends Component {
               <Input
                 s={6}
                 type='text'
-                maxLength="50"
+                maxLength='50'
                 name='hospitalAdd'
                 label='Address'
                 value={this.state.hospitalAdd}
@@ -315,11 +327,11 @@ class AddPropertyForm extends Component {
             </Row>
 
             <Row>
-              <h6 className="contact-form-subheader"><FontAwesomeIcon className="add-form-icon" icon={faStethoscope} /> Nearest Urgent Care</h6>
+              <h6 className='contact-form-subheader'><FontAwesomeIcon className='add-form-icon' icon={faStethoscope} /> Nearest Urgent Care</h6>
               <Input
                 s={6}
                 type='text'
-                maxLength="50"
+                maxLength='50'
                 name='urgentCareName'
                 label='Name'
                 value={this.state.urgentCareName}
@@ -328,7 +340,7 @@ class AddPropertyForm extends Component {
               <Input
                 s={6}
                 type='text'
-                maxLength="50"
+                maxLength='50'
                 name='urgentCareAdd'
                 label='Address'
                 value={this.state.urgentCareAdd}
@@ -337,11 +349,11 @@ class AddPropertyForm extends Component {
             </Row>
 
             <Row>
-              <h6 className="contact-form-subheader"><FontAwesomeIcon className="add-form-icon" icon={faWarehouse} /> Homeowners Association</h6>
+              <h6 className='contact-form-subheader'><FontAwesomeIcon className='add-form-icon' icon={faWarehouse} /> Homeowners Association</h6>
               <Input
                 s={4}
                 type='text'
-                maxLength="50"
+                maxLength='50'
                 name='hoaName'
                 label='Name'
                 value={this.state.hoaName}
@@ -350,7 +362,7 @@ class AddPropertyForm extends Component {
               <Input
                 s={4}
                 type='text'
-                maxLength="50"
+                maxLength='50'
                 name='hoaPhone'
                 label='Phone'
                 value={this.state.hoaPhone}
@@ -359,7 +371,7 @@ class AddPropertyForm extends Component {
               <Input
                 s={4}
                 type='text'
-                maxLength="50"
+                maxLength='50'
                 name='hoaWebsite'
                 label='Website'
                 value={this.state.hoaWebsite}
@@ -368,11 +380,11 @@ class AddPropertyForm extends Component {
             </Row>
 
             <Row>
-              <h6 className="contact-form-subheader"><FontAwesomeIcon className="add-form-icon" icon={faAddressCard} /> Neighbor Information</h6>
+              <h6 className='contact-form-subheader'><FontAwesomeIcon className='add-form-icon' icon={faAddressCard} /> Neighbor Information</h6>
               <Input
                 s={6}
                 type='text'
-                maxLength="75"
+                maxLength='75'
                 name='neighbor1Name'
                 label='Name(s)'
                 value={this.state.neighbor1Name}
@@ -381,7 +393,7 @@ class AddPropertyForm extends Component {
               <Input
                 s={6}
                 type='text'
-                maxLength="14"
+                maxLength='14'
                 name='neighbor1Phone'
                 label='Phone'
                 value={this.state.neighbor1Phone}
@@ -393,7 +405,7 @@ class AddPropertyForm extends Component {
               <Input
                 s={6}
                 type='text'
-                maxLength="75"
+                maxLength='75'
                 name='neighbor2Name'
                 label='Name(s)'
                 value={this.state.neighbor2Name}
@@ -402,7 +414,7 @@ class AddPropertyForm extends Component {
               <Input
                 s={6}
                 type='text'
-                maxLength="14"
+                maxLength='14'
                 name='neighbor2Phone'
                 label='Phone'
                 value={this.state.neighbor2Phone}
@@ -414,7 +426,7 @@ class AddPropertyForm extends Component {
               <Input
                 s={6}
                 type='text'
-                maxLength="75"
+                maxLength='75'
                 name='neighbor3Name'
                 label='Name(s)'
                 value={this.state.neighbor3Name}
@@ -423,7 +435,7 @@ class AddPropertyForm extends Component {
               <Input
                 s={6}
                 type='text'
-                maxLength="14"
+                maxLength='14'
                 name='neighbor3Phone'
                 label='Phone'
                 value={this.state.neighbor3Phone}
@@ -433,8 +445,9 @@ class AddPropertyForm extends Component {
 
           </CollapsibleItem>
         </Collapsible>
-        <div className="center-align">
-          <Button type="submit" onClick={this.handleFormSubmit}>
+        
+        <div className='center-align'>
+          <Button type='submit' onClick={this.handleFormSubmit}>
             Submit
           </Button>
         </div>

@@ -1,18 +1,17 @@
-import React from 'react';
+import React               from 'react';
 import { Navbar, NavItem } from 'react-materialize';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
-
-import LogOutButton from '../../Buttons/LogOutButton';
+import { faHome }          from '@fortawesome/free-solid-svg-icons/faHome';
+import LogOutButton        from '../../Buttons/LogOutButton';
 
 const LogOutNav = () => (
-  <div className="container">
-    <Navbar className="transparent-nav">
-      <NavItem href="/home" className="left-float"><FontAwesomeIcon icon={faHome} size='3x' href="/home"/></NavItem>
-      <NavItem href="/signin" className="right-float signin-btn"><LogOutButton /></NavItem>
-      <NavItem href="/contact" className="right-float">Contact</NavItem>
-      <NavItem href="/help" className="right-float">Help</NavItem>
-      <NavItem href="/about" className="right-float">About</NavItem>
+  <div className='container'>
+    <Navbar className='transparent-nav'>
+      <NavItem href='/home' className='left-float'><FontAwesomeIcon icon={faHome} size='3x' href='/home'/></NavItem>
+      <NavItem href='/signin' className='right-float signin-btn'><LogOutButton /></NavItem>
+      <NavItem href='/contact' className='right-float'>Contact</NavItem>
+      <NavItem href='/help' className='right-float'>Help</NavItem>
+      <NavItem href='/about' className='right-float'>About</NavItem>
     </Navbar>
   </div>
 )

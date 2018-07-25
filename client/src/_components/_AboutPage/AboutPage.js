@@ -1,9 +1,9 @@
-import React from 'react';
-import { Card, Row, Col } from 'react-materialize';
+import React               from 'react';
+import { Card, Row, Col }  from 'react-materialize';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHandPointUp } from '@fortawesome/free-solid-svg-icons';
-import SignupNav from '../Navs/SignupNav'
-import portrait from '../../assets/images/portrait.jpg'
+import { faHandPointUp }   from '@fortawesome/free-solid-svg-icons';
+import SignupNav           from '../Navs/SignupNav';
+import portrait            from '../../assets/images/portrait.jpg';
 
 const AboutPage = () => (
   <div className='app'>
@@ -22,14 +22,14 @@ const AboutPage = () => (
                 <br />
                 This app was created by me, Becca Kostyo. I created this project for and used this project as my
                 'Final Project' for the University of Denver Coding Bootcamp.
-            </p>
+              </p>
             </Col>
             <Col s={4} m={3}>
               <div className='center-align'>
                 <img className='bk-image responsive-img circle' src={portrait} alt='Becca Kostyo Portrait' />
                 <p className='flow-text'>
                   ( Me <FontAwesomeIcon icon={faHandPointUp} /> )
-            </p>
+                </p>
               </div>
             </Col>
           </Row>
@@ -48,7 +48,7 @@ const AboutPage = () => (
             get information about and 'manage' their properties. From that motivation came Home Management Hero.
           <br /><br />
             For an introduction on how to use Home Management Hero, click <a href='/help'>here</a> or visit the Help section.
-         </p>
+          </p>
         </div>
       </Card>
     </div>

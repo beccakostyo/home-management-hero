@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import { withRouter} from 'react-router-dom';
+import React, { Component }   from 'react';
+import axios                  from 'axios';
+import { withRouter}          from 'react-router-dom';
 import { Input, Button, Row } from 'react-materialize';
 
 class SigninForm extends Component {
   state = {
-    username: "",
-    password: "",
+    username: '',
+    password: '',
     loggedIn: false
   };
 
@@ -38,43 +38,43 @@ class SigninForm extends Component {
             loggedIn: true,
             username: response.data.username
           })
-          this.props.history.push("/dash")
+          this.props.history.push('/dash')
         }
       })
       .catch(error => {
         console.log(`Login error: ${error}`)
       })
   };
+
   render() {
     return (
-      <div className="root">
-      <Row>
-        <Input
-          s={6}
-          type="text"
-          name="username"
-          label="Username"
-          value={this.state.username}
-          onChange={this.handleInputChange}
-        />
-        <Input
-          s={6}
-          type="password"
-          name="password"
-          label="password"
-          value={this.state.Password}
-          onChange={this.handleInputChange}
-        />
+      <div className='root'>
+        <Row>
+          <Input
+            s={6}
+            type='text'
+            name='username'
+            label='Username'
+            value={this.state.username}
+            onChange={this.handleInputChange}
+          />
+          <Input
+            s={6}
+            type='password'
+            name='password'
+            label='password'
+            value={this.state.Password}
+            onChange={this.handleInputChange}
+          />
         </Row>
         <Button
-          type="submit"
+          type='submit'
           onClick={this.handleFormSubmit}>
           submit
         </Button>
       </div>
     )
   }
-
 }
 
 export default withRouter(SigninForm);

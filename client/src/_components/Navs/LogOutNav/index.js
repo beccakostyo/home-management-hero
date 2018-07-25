@@ -1,1 +1,1 @@
-export { default } from "./LogOutNav.js"
+export { default } from './LogOutNav.js';

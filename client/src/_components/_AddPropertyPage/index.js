@@ -1,1 +1,1 @@
-export { default } from "./AddPropertyPage.js";
+export { default } from './AddPropertyPage.js';

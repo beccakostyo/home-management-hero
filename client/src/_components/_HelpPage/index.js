@@ -1,1 +1,1 @@
-export { default } from "./HelpPage.js";
+export { default } from './HelpPage.js';

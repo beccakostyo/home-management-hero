@@ -1,19 +1,23 @@
-import React, { Component } from 'react';
-import { Button, Card, Collapsible, CollapsibleItem, Row } from 'react-materialize';
-import API from '../../utils/API';
-import { Link } from 'react-router-dom';
+import React, { Component }  from 'react';
+import API                   from '../../utils/API';
+import { Link }              from 'react-router-dom';
+import LogOutNav             from '../Navs/LogOutNav';
+import { FontAwesomeIcon }   from '@fortawesome/react-fontawesome';
+import { faPlus, 
+         faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
+import { Button, 
+         Card, 
+         Collapsible, 
+         CollapsibleItem, 
+         Row }               from 'react-materialize';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
-
-import LogOutNav from '../Navs/LogOutNav';
 
 class UserDash extends Component {
   state = {
     properties: [],
-    homeName: '',
-    address: '',
-    phone: ''
+    homeName:   '',
+    address:    '',
+    phone:      ''
   };
 
   componentDidMount() {
@@ -39,14 +43,13 @@ class UserDash extends Component {
   render() {
     return (
       <div className='app'>
-
         <LogOutNav />
         <div className='container'>
           {this.state.properties.length ? (
             <Card>
-              <div id="card-content">
-                <h3 className="center-align">Your Properties:</h3>
-                <p className="center-align flow-text"><em>(click to expand)</em></p>
+              <div id='card-content'>
+                <h3 className='center-align'>Your Properties:</h3>
+                <p className='center-align flow-text'><em>(click to expand)</em></p>
                 <Collapsible popout>
                   {this.state.properties.map(property => ( 
                     <CollapsibleItem
@@ -57,7 +60,7 @@ class UserDash extends Component {
                       key={property._id}
                       icon='place'>
                       <ul className='property-info'>
-                        {property.image !== "" && 
+                        {property.image !== '' && 
                           <li><img src={property.image} alt={property.homeName} /></li>
                         }
                         <li><strong>Name:</strong> {property.homeName}</li>
@@ -90,11 +93,9 @@ class UserDash extends Component {
                 </div>
               </div>
             </Card>
-
           ) : (
-
               <Card>
-                <div id="card-content" className='center-align'>
+                <div id='card-content' className='center-align'>
                   <h3>No Results to Display</h3>
                   <p className='flow-text'>Click the button below to add your first property</p>
                   <a href='/add-property'><Button floating large className='add-button' id='add-button' waves='light'><FontAwesomeIcon icon={faPlus} className='add-icon' /></Button></a>
